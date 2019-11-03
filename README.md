@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Alt text](https://github.com/WallaceRocha/learnReactJs/blob/master/public/sshot.png)
+
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,4 +1,4 @@
-## This project was used to learn basics of ReactJs and based on [rocketseat](https://www.youtube.com/watch?v=awRtgpRsdTQ) tutorial.
+## This project was used to learn the basics of ReactJs, based on [rocketseat](https://www.youtube.com/watch?v=awRtgpRsdTQ) tutorial.
 
 ![Alt text](https://github.com/WallaceRocha/learnReactJs/blob/master/public/sshot.png)
 

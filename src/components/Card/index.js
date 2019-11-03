@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Container, Label } from './styles';
 
-export default function Card() {
+import { useDrag, useDrop } from 'react-dnd';
+
+export default function Card({data}) {
+  
+  const ref = useRef();
+
+  const [{isDragging}, dragRef] =  useDrag({
+    item: { type: 'CARD', id: data.id},
+    collect: monitor => ({
+      isDragging: monitor.isDragging(),
+    })
+  });
+
+  const [,dropRef] = useDrop({
+    accept: 'CARD',
+    hover(item, monitor){
+      
+    },
+    drop(item){
+      
+      console.log(data.id)
+    }
+  })
+
+  dragRef(dropRef(ref))
+
   return (
-    <Container>
+    <Container ref={ref} isDragging={isDragging}>
       <header>
-        <Label color="#7159c1"/>
+        {data.labels.map(label => <Label key={label} color={label}/> )}
       </header>
-      <p>Fazer atividade</p>
-      <img src="https://avatars0.githubusercontent.com/u/19808262?s=220&v=4" alt="avatar"/>
+      <p>{data.content}</p>
+      {data.user &&<img src={data.user} alt="avatar"/> }
     </Container>
   );
 }
